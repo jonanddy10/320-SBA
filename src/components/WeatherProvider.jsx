@@ -5,23 +5,28 @@ const WeatherContext = createContext();
 export default function WeatherProvider({children}) {
   const[weatherData, setWeatherData] = useState(null)
 
-  const URL = 'https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=7eae607f20a56973cd3ed70361e85210'
+  const test = '7eae607f20a56973cd3ed70361e85210'
+
+  // allow user to input city:
+
+  // create a let variable and save user-input inside of it. clear any white-space at front 
+  // or end and replace any whitespace between the first letter and the last letter (no special characters) with '%20' (URL whitespace) 
+  
+  const URL = 'https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=7eae607f20a56973cd3ed70361e85210&units=imperial'
 
   // retrieve ... and store data 
   useEffect(() => {
     const fetchData = async () => {
     try {
-      const result = await fetch(URL)
-      const json = await result.json()
+      const response = await fetch(URL)
+      const data = await response.json()
       
-      setWeatherData([...json.properties.periods])
-      console.log(weatherData)
-      
+      setWeatherData({...data})
     } catch (error) {
-      console.log(`There's been an error connecting to the API`)
+      console.log(`There's been an error connecting to the API` + error)
     }
-  fetchData();
   }
+  fetchData();
 }, [])
 
 // function getHeader() {

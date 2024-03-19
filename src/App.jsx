@@ -1,5 +1,5 @@
 // This react application will provide the current temperature in Seattle (F). 
-// When clicking on the 'Hourly' or 'Weekly' option a 'new screen' will display the associated data. 
+// When clicking on the 'Temp' or 'Weekly' option a 'new screen' will display the associated data. 
 
 // import { useState, useEffect, createContext, useContext } from 'react'
 import {BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom';
@@ -7,8 +7,7 @@ import './App.css'
 
   // pages
   import Home from './pages/Home'
-  import Hourly from './pages/Hourly';
-  import Weekly from './pages/Weekly';
+  import Temp from './pages/Temp';
 
   import WeatherProvider from './components/WeatherProvider';
 
@@ -21,8 +20,8 @@ function App() {
       <BrowserRouter>
         <header>
           <nav>
-            <NavLink to="/" className="hidden">Home</NavLink>
-            <NavLink to="Hourly">Hourly</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/Temp">Temp</NavLink>
           </nav>
         </header>
 
@@ -30,8 +29,7 @@ function App() {
         <WeatherProvider>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/hourly" element={<Hourly/>} />
-          <Route path="/weekly" element={<Weekly />} />
+          <Route path="/temp" element={<Temp/>} />
         </Routes>
         </WeatherProvider>
         </main>

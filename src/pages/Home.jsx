@@ -7,7 +7,7 @@ function Home() {
         <div><h1>Welcome,</h1></div>
         <div>Enter your city to continue</div>
         <br/>
-        <form class='form'>
+        <form id='location-form' className='form'>
             <input type='text' placeholder='Seattle, WA'/>
             <button id='search-button'>search</button>
         </form>

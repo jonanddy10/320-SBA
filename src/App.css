@@ -4,16 +4,17 @@
   padding: 2rem;
   text-align: center;
 }
-
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: red solid 5px;
   width: 300px;
-}
-header nav {
-  gap: 15px;
 }
 .smallFont {
   font-size: medium;
@@ -33,7 +34,7 @@ header nav {
   margin-top: 1rem;
   border: none;
   border-radius: 15px;
-  height: 40px;
+  height: 45px;
   transition-duration: .1s;
 }
 #search-button:hover {
@@ -41,4 +42,20 @@ header nav {
   font-size: large; 
   background-color: white;
   border: black dotted 3px;
+}
+.header-card {
+  border-radius: 15px;
+  border: white dotted 3px;
+  background-color: black;
+  transition-duration: .2s;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.header-card:hover {
+  border: none
+}
+h5 {
+  display: flex;
+
 }
