@@ -10,6 +10,7 @@ function Home() {
         <form id='location-form' className='form'>
             <input type='text' placeholder='Seattle, WA'/>
             <button id='search-button'>search</button>
+            <h6>This feature is currently under maintainence</h6>
         </form>
     </>
   )
