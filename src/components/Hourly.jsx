@@ -1,13 +1,14 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
-
 
 function Hourly() {
+  const weatherData = useContext(WeatherContext);
+
+  if(!weatherData) return null;
 
   return (
-    <>
-    Hourly
-    </>
+    <div>
+      ~Display Hourly forecast~
+    </div>
   )
 }
 

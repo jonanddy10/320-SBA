@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Header({shift, low, now, high}) {
+function Header({viewData}) {
 const weatherData = useContext(WeatherContext);
 
 return (
@@ -9,9 +9,9 @@ return (
     <div className='shift'>{shift}</div>
     <div className='header'>
         
-        <div className='smallFont' id='low'>{low}</div>
-        <div className='largeFont' id='now'>{now}</div>
-        <div className='smallFont' id='high'>{high}</div>
+        <div className='smallFont' id='low'>{viewData.low}</div>
+        <div className='largeFont' id='now'>{viewData.now}</div>
+        <div className='smallFont' id='high'>{viewData.high}</div>
     </div>
     </>
   )

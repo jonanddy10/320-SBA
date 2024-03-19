@@ -3,7 +3,7 @@ import './App.css'
   // main components
   import Header from './components/Header'
   import Hourly from './components/Hourly'
-  import Week from './components/Week'
+  import Weekly from './components/Weekly'
   import Background from './components/Background'
 
 function App() {
@@ -31,11 +31,12 @@ function App() {
 
   return (
     <>
-      <Background />
-      <Header data={headerData} />
+      <WeatherProvider>
+      <Header viewData={headerData} />
       {/* <Caption /> */}
       <Hourly />
-      <Week />
+      <Weekly />
+      </WeatherProvider>
     </>
   )
 }
