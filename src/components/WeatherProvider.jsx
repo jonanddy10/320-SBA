@@ -5,7 +5,7 @@ const WeatherContext = createContext();
 export default function WeatherProvider({children}) {
   const[weatherData, setWeatherData] = useState(null)
 
-  const URL = 'https://api.weather.gov/gridpoints/SEW/124,69/forecast'
+  const URL = 'https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=7eae607f20a56973cd3ed70361e85210'
 
   // retrieve ... and store data 
   useEffect(() => {

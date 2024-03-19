@@ -1,8 +1,10 @@
 import React from 'react'
 
 function Home() {
-  return (
+
+    return (
     <>
+        <div><h1>Welcome,</h1></div>
         <div>Enter your city to continue</div>
         <br/>
         <form class='form'>
