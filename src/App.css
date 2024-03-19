@@ -12,9 +12,33 @@
   border: red solid 5px;
   width: 300px;
 }
+header nav {
+  gap: 15px;
+}
 .smallFont {
   font-size: medium;
 }
 .largeFont {
   font-size: x-large;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#search-button {
+  color: white;
+  background-color: black;
+  width: 50%;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 15px;
+  height: 40px;
+  transition-duration: .1s;
+}
+#search-button:hover {
+  color: black;
+  font-size: large; 
+  background-color: white;
+  border: black dotted 3px;
 }
