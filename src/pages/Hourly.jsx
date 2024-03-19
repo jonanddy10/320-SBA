@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import {WeatherContext} from '../components/WeatherProvider'
 
 function Hourly() {
+const weatherData = useContext(WeatherContext);
+
+useEffect(() => {
+    console.log(weatherData);
+}, [weatherData])
   return (
-    <div>Hourly Page here</div>
+    <div>
+        Hourly
+    </div>
   )
 }
 

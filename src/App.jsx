@@ -21,20 +21,22 @@ function App() {
       <BrowserRouter>
         <header>
           <nav>
-            <h1>Welcome,</h1>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="hidden">Home</NavLink>
             <NavLink to="Hourly">Hourly</NavLink>
           </nav>
         </header>
-      <main>
-      {/* <WeatherProvider> */}
+
+        <h1>Welcome,</h1>
+
+        <main>
+        <WeatherProvider>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/hourly" element={<Hourly/>} />
           <Route path="/weekly" element={<Weekly />} />
         </Routes>
-      {/* </WeatherProvider> */}
-      </main>
+        </WeatherProvider>
+        </main>
       </BrowserRouter>
     </>
   )

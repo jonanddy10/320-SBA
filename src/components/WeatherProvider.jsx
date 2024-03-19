@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-function WeatherProvider({children}) {
+const WeatherContext = createContext();
+
+export default function WeatherProvider({children}) {
   const[weatherData, setWeatherData] = useState(null)
-
-  const [data, setData] = useState(null)
-  // const [headerData, setHeaderData] = useState({})
 
   const URL = 'https://api.weather.gov/gridpoints/SEW/124,69/forecast'
 
@@ -15,8 +14,8 @@ function WeatherProvider({children}) {
       const result = await fetch(URL)
       const json = await result.json()
       
-      setData([...json.properties.periods])
-      getHeader()
+      setWeatherData([...json.properties.periods])
+      console.log(weatherData)
       
     } catch (error) {
       console.log(`There's been an error connecting to the API`)
@@ -25,26 +24,26 @@ function WeatherProvider({children}) {
   }
 }, [])
 
-function getHeader() {
-  if(data !== null){
+// function getHeader() {
+//   if(data !== null){
 
-  setWeatherData({
-    shift: data.name, 
-    low: data.temperature,
-    now: data.temperature,
-    high: data.temperature,
-    weekly: [],
-    hourly: [],
-  })
-  console.log(weatherData)
-  }
-}
+//   setWeatherData({
+//     shift: data.name, 
+//     low: data.temperature,
+//     now: data.temperature,
+//     high: data.temperature,
+//     weekly: [],
+//     hourly: [],
+//   })
+//   console.log(weatherData)
+//   }
+// }
 
   return (
     <WeatherContext.Provider value={weatherData}>
-        ~WeatherProvider children here~
+        {children}
     </WeatherContext.Provider >
   )
 }
 
-export default WeatherProvider
+export {WeatherProvider, WeatherContext}
