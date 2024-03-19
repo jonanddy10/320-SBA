@@ -1,9 +1,10 @@
 import { useState, useEffect, createContext, useContext } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
   // main components
   import Header from './components/Header'
-  import Hourly from './components/Hourly'
-  import Weekly from './components/Weekly'
+  import HourlyForecast from './components/HourlyForecast'
+  import WeeklyForecast from './components/WeeklyForecast'
 
 const WeatherContext = createContext();
 
@@ -11,29 +12,17 @@ function App() {
 
   return (
     <>
+    <Router>
       <WeatherProvider>
       <Header viewData={headerData} />
-      {/* <Caption /> */}
-      <Hourly />
-      <Weekly />
+      <Routes>
+        <Route path="/hourly" element={<HourlyForecast/>}/>
+        <Route path="/weekly" element={<WeeklyForecast />} />
+      </Routes>
       </WeatherProvider>
+    </Router>
     </>
   )
 }
 
 export default App
-
-function getHeader() {
-  if(data !== null){
-
-  setWeatherData({
-    shift: data.name, 
-    low: data.temperature,
-    now: data.temperature,
-    high: data.temperature,
-    weekly: [],
-    hourly: [],
-  })
-  console.log(weatherData)
-  }
-}

@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Hourly() {
+function HourlyForecast() {
   const weatherData = useContext(WeatherContext);
 
   if(!weatherData) return null;
 
   return (
     <div>
-      ~Display Hourly forecast~
+      ~Display HourlyForecast forecast~
     </div>
   )
 }
 
-export default Hourly
+export default HourlyForecast

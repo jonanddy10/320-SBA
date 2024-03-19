@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Weekly() {
+function WeeklyForecast() {
   const weatherData = useContext(WeatherContext)
   
   if(!weatherData) return null;
 
   return (
     <div>
-      ~Display Weekly forecast~
+      ~Display WeeklyForecast forecast~
     </div>
   )
 }
 
-export default Weekly
+export default WeeklyForecast
