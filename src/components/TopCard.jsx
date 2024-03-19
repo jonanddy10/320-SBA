@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React, {useContext} from 'react'
 import {WeatherContext} from '../components/WeatherProvider'
 
-function Temp() {
+function TopCard() {
 const weatherData = useContext(WeatherContext);
 
 return (
@@ -15,7 +15,8 @@ return (
       </div>
     ))}
     </div>
+    
   )
 }
 
-export default Temp
+export default TopCard

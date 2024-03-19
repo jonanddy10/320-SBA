@@ -1,13 +1,13 @@
-// This react application will provide the current temperature in Seattle (F). 
-// When clicking on the 'Temp' or 'Weekly' option a 'new screen' will display the associated data. 
+// This react application will provide the current Weathererature in Seattle (F). 
+// When clicking on the 'Weather' or 'Weekly' option a 'new screen' will display the associated data. 
 
 // import { useState, useEffect, createContext, useContext } from 'react'
-import {BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
 import './App.css'
 
   // pages
   import Search from './pages/Search'
-  import Temp from './pages/Temp';
+  import Weather from './pages/Weather';
 
   import WeatherProvider from './components/WeatherProvider';
 
@@ -21,7 +21,7 @@ function App() {
         <header>
           <nav>
             <NavLink to="/">Find</NavLink>
-            <NavLink to="/Temp">Weather</NavLink>
+            <NavLink to="/Weather">Weather</NavLink>
           </nav>
         </header>
 
@@ -29,7 +29,7 @@ function App() {
         <WeatherProvider>
         <Routes>
           <Route path="/" element={<Search/>} />
-          <Route path="/temp" element={<Temp/>} />
+          <Route path="/Weather" element={<Weather/>} />
         </Routes>
         </WeatherProvider>
         </main>
