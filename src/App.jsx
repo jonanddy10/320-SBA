@@ -6,7 +6,7 @@ import {BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom';
 import './App.css'
 
   // pages
-  import Home from './pages/Home'
+  import Search from './pages/Search'
   import Temp from './pages/Temp';
 
   import WeatherProvider from './components/WeatherProvider';
@@ -20,15 +20,15 @@ function App() {
       <BrowserRouter>
         <header>
           <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/Temp">Temp</NavLink>
+            <NavLink to="/">Find</NavLink>
+            <NavLink to="/Temp">Weather</NavLink>
           </nav>
         </header>
 
         <main>
         <WeatherProvider>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Search/>} />
           <Route path="/temp" element={<Temp/>} />
         </Routes>
         </WeatherProvider>
